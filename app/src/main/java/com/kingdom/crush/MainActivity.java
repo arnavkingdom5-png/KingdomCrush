@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.webkit.WebChromeClient;
@@ -33,6 +34,10 @@ public class MainActivity extends Activity {
             s.setAllowContentAccess(true);
             s.setAllowFileAccessFromFileURLs(true);
             s.setAllowUniversalAccessFromFileURLs(true);
+            s.setDatabaseEnabled(true);
+
+            // Hardware Acceleration for HTML5 Games
+            webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
 
             webView.setWebViewClient(new WebViewClient());
             webView.setWebChromeClient(new WebChromeClient());
@@ -76,5 +81,5 @@ public class MainActivity extends Activity {
             super.onBackPressed();
         }
     }
-                }
-                                 
+                                 }
+                                              
